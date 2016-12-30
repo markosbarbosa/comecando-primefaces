@@ -18,7 +18,8 @@
 		
 			<p:toolbar>
 				<f:facet name="left">
-					<p:commandButton type="button" value="Nova" icon="ui-icon-document" />
+					<p:commandButton type="button" value="Nova" icon="ui-icon-document"
+						onclick="PF('edicaoEmpresaDialog').show()" />
 	
 			 		<span class="ui-separator">
 		                <span class="ui-icon ui-icon-grip-dotted-vertical" />
@@ -48,8 +49,14 @@
 					<h:outputText value="#{empresa.cnpj}" />
 				</p:column>
 		
-		
 			</p:dataTable>
+	
+			<p:dialog header="Nova Empresa" widgetVar="edicaoEmpresaDialog" id="empresa-dialog"
+				resizable="false" modal="true" closeOnEscape="true">
+				
+				<p:commandButton value="Botão" />
+				
+			</p:dialog>
 	
 		</h:form>
 	</ui:define>
