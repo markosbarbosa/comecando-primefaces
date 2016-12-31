@@ -18,9 +18,9 @@
 		
 			<p:toolbar>
 				<f:facet name="left">
-					<p:commandButton type="button" value="Nova" icon="ui-icon-document"
+					<p:commandButton value="Nova" icon="ui-icon-document"
 						action="#{gestaoEmpresasBean.prepararNovoCadastro}"
-						process="@this"
+						process="@this" update="empresa-dialog"
 						oncomplete="PF('edicaoEmpresaDialog').show()" />
 	
 			 		<span class="ui-separator">
@@ -35,7 +35,7 @@
 			</p:toolbar>
 	
 	
-			<p:dataTable value="#{gestaoEmpresasBean.todasEmpresas}" var="empresa"
+			<p:dataTable value="#{gestaoEmpresasBean.todasEmpresas}" var="empresa" id="empresa-table"
 				emptyMessage="Nenhuma empresa cadastrada" rows="10" paginator="true" 
 				paginatorPosition="bottom" style="margin-top: 10px;">
 				
@@ -86,7 +86,7 @@
 					
 					<p:commandButton value="Salvar" id="salvar-button"
 						action="#{gestaoEmpresasBean.salvar}"
-						process="empresa-dialog"
+						process="empresa-dialog" update="empresa-table"
 						oncomplete="PF('edicaoEmpresaDialog').hide()" />
 					
 				</h:panelGrid>

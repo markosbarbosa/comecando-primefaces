@@ -36,8 +36,8 @@ public class GestaoEmpresasBean implements Serializable {
 	empresaEdicao = new Empresa();
     }
     
-    public void salvar(Empresa empresa) {
-	cadastroEmpresa.salvar(empresa);
+    public void salvar() {
+	cadastroEmpresa.salvar(empresaEdicao);
 	consultar();
 	
 	messages.info("Empresa salva com sucesso!");
