@@ -62,6 +62,8 @@
 			<p:dialog header="Nova Empresa" widgetVar="edicaoEmpresaDialog" id="empresa-dialog"
 				resizable="false" modal="true" closeOnEscape="true">
 				
+				<p:defaultCommand target="salvar-button" scope="empresa-dialog" />
+				
 				<p:messages id="msgs-dialog" />
 				
 				<h:panelGrid columns="2" id="painel-dialog">
