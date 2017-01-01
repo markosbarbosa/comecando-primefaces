@@ -78,5 +78,4 @@ public class GestaoEmpresasBean implements Serializable {
         this.empresaSelecionada = empresaSelecionada;
     }
     
-    
 }

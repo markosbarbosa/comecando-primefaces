@@ -34,7 +34,15 @@
 		            </span>
 		            
 		            <p:commandButton icon="ui-icon-pencil" title="Editar"
-		             	disabled="#{gestaoEmpresasBean.empresaSelecionada == null}" />
+		             	disabled="#{gestaoEmpresasBean.empresaSelecionada == null}"
+		             	process="@this" update="empresa-dialog"
+						oncomplete="PF('edicaoEmpresaDialog').show()">
+						
+						<p:resetInput target="empresa-dialog" />
+						<f:setPropertyActionListener value="#{gestaoEmpresasBean.empresaSelecionada}" 
+							target="#{gestaoEmpresasBean.empresaEdicao}" />
+						
+					</p:commandButton>
 		             
 		            <p:commandButton icon="ui-icon-trash" title="Excluir"
 		            	disabled="#{gestaoEmpresasBean.empresaSelecionada == null}" />
